@@ -14,5 +14,4 @@ Todo:
 - Version checker from github releases
 
 All features are constantly getting updated and fixed. 
-
 I'm trying to improve every feature, so that's easier to implement for you.
