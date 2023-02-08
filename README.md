@@ -1,5 +1,6 @@
 ## CMcLib (**C**ustom-**M**ine**c**raft **Lib**rary) v0.1
-<span style="color: hsl(0, 50%, 50%); font-weight: bold">NOT RELEASED</span>
+NOT RELEASED
+
 This library contains, at the moment:
 - Custom items
 - Custom enchantments
@@ -11,3 +12,7 @@ Planned:
 
 Todo:
 - Version checker from github releases
+
+All features are constantly getting updated and fixed. 
+
+I'm trying to improve every feature, so that's easier to implement for you.
