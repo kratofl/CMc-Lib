@@ -5,10 +5,14 @@ This library contains, at the moment:
 - Custom items
 - Custom enchantments
 - Custom advancements
+- Creating ActionBar
+- Creating Bossbar
+- Get TPS
 
 Planned:
 - Custom crafting recipes
 - Custom events
+- Custom mobs
 
 Todo:
 - Version checker from github releases
