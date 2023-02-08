@@ -8,14 +8,12 @@ import java.util.List;
 import java.util.Map;
 
 public class JsonHelper {
-
     private static final Gson GSON = new GsonBuilder()
             .excludeFieldsWithoutExposeAnnotation()
             .registerTypeAdapter(List.class, new ListAdapter())
             .registerTypeAdapter(Map.class, new MapAdapter())
             .setPrettyPrinting()
             .create();
-
     public static String getJsonFromClass(Object object) {
         return GSON.toJson(object);
     }
