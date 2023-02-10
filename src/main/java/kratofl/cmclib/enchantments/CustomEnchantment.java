@@ -7,11 +7,6 @@ import org.bukkit.inventory.ItemStack;
 
 public class CustomEnchantment extends Enchantment {
 
-    private final String name;
-    private final int maxLevel;
-    private final boolean isTreasure;
-    private final boolean isCursed;
-
     public CustomEnchantment(NamespacedKey key, String name, int maxLevel, boolean isTreasure, boolean isCursed) {
         super(key);
         this.name = name;
@@ -19,6 +14,11 @@ public class CustomEnchantment extends Enchantment {
         this.isTreasure = isTreasure;
         this.isCursed = isCursed;
     }
+
+    private final String name;
+    private final int maxLevel;
+    private final boolean isTreasure;
+    private final boolean isCursed;
 
     @Override
     public String getName() {

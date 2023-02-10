@@ -3,6 +3,7 @@ package kratofl.cmclib.items;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.Damageable;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -41,21 +42,23 @@ public class CustomItemStackBuilder {
         return this;
     }
 
-    private NamespacedKey durabilityKey;
-    private NamespacedKey maxDurabilityKey;
-    public CustomItemStackBuilder setDurability(int durability) {
-        itemMeta.getPersistentDataContainer().set(durabilityKey, PersistentDataType.INTEGER, durability);
-        itemMeta.getPersistentDataContainer().set(maxDurabilityKey, PersistentDataType.INTEGER, durability);
+//    private NamespacedKey durabilityKey = NamespacedKey.minecraft("durability");
+//    private NamespacedKey maxDurabilityKey = NamespacedKey.minecraft("max_durability");
+//    public CustomItemStackBuilder setDurability(int durability) {
+//        itemMeta.getPersistentDataContainer().set(durabilityKey, PersistentDataType.INTEGER, durability);
+//        itemMeta.getPersistentDataContainer().set(maxDurabilityKey, PersistentDataType.INTEGER, durability);
+//        return this;
+//    }
+    public CustomItemStackBuilder addEnchantment(Enchantment enchantment, Integer value) {
+        itemMeta.addEnchant(enchantment, value, true);
         return this;
     }
-    public CustomItemStackBuilder addEnchantments(HashMap<Enchantment, Integer> enchantments) {
-        for (Map.Entry<Enchantment, Integer> enchantment : enchantments.entrySet()) {
-            itemMeta.addEnchant(enchantment.getKey(), enchantment.getValue(), true);
-        }
+    public CustomItemStackBuilder setLore(List<String> lore) {
+        itemMeta.setLore(lore);
         return this;
     }
-    public CustomItemStackBuilder addLores(List<String> lores) {
-        itemMeta.setLore(lores);
+    public CustomItemStackBuilder addItemFlags(ItemFlag... itemFlag) {
+        itemMeta.addItemFlags(itemFlag);
         return this;
     }
 
