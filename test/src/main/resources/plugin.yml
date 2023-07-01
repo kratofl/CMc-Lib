@@ -1,5 +1,5 @@
-name: TestPlugin
+name: Testplugin
 version: '${project.version}'
-main: kratofl.testplugin.TestPlugin
+main: kratofl.testplugin.Testplugin
 api-version: 1.19
-authors: [ kratofl ]
+authors: [ Kratofl ]

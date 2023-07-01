@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>kratofl</groupId>
-    <artifactId>testPlugin</artifactId>
-    <version>1.0</version>
+    <artifactId>testplugin</artifactId>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>TestPlugin</name>
+    <name>Testplugin</name>
 
     <properties>
         <java.version>1.8</java.version>

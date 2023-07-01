@@ -2,7 +2,6 @@ package kratofl.cmclib.enchantments;
 
 import kratofl.cmclib.constants.Notifications;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
