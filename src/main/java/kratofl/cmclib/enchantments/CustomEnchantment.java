@@ -4,11 +4,12 @@ import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.enchantments.EnchantmentTarget;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.plugin.Plugin;
 
 public class CustomEnchantment extends Enchantment {
 
-    public CustomEnchantment(NamespacedKey key, String name, int maxLevel, boolean isTreasure, boolean isCursed) {
-        super(key);
+    public CustomEnchantment(Plugin plugin, String nameSpaceKey, String name, int maxLevel, boolean isTreasure, boolean isCursed) {
+        super(new NamespacedKey(plugin, nameSpaceKey));
         this.name = name;
         this.maxLevel = maxLevel;
         this.isTreasure = isTreasure;

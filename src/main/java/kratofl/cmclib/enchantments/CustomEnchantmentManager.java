@@ -11,23 +11,19 @@ import java.lang.reflect.Field;
 public class CustomEnchantmentManager {
 
     /**
-     * It adds the custom enchantment with a listener. <br>
+     * Aadds the custom enchantment with a listener. <br>
      * In that case, the enchantment class is also the listener class
      * @param enchantment
      */
-    public static void addCustomEnchantment(CustomEnchantment enchantment, Plugin plugin) {
+    public static void registerCustomEnchantment(CustomEnchantment enchantment, Plugin plugin) {
         registerCustomEnchantment(enchantment, (Listener) enchantment, plugin);
     }
     /**
-     * It adds the custom enchantment with a different listener
+     * Adds the custom enchantment with a different listener
      * @param enchantment
      * @param enchantmentEventListener
      */
-    public static void addCustomEnchantment(CustomEnchantment enchantment, Listener enchantmentEventListener, Plugin plugin) {
-        registerCustomEnchantment(enchantment, enchantmentEventListener, plugin);
-    }
-
-    private static void registerCustomEnchantment(CustomEnchantment enchantment, Listener enchantmentListener, Plugin plugin) {
+    public static void registerCustomEnchantment(CustomEnchantment enchantment, Listener enchantmentEventListener, Plugin plugin) {
         try {
             Field field = Enchantment.class.getDeclaredField("acceptingNew");
             field.setAccessible(true);
@@ -36,14 +32,14 @@ public class CustomEnchantmentManager {
             ex.printStackTrace();
         }
 
-        registerEnchantment(enchantment, enchantmentListener, plugin);
+        registerEnchantment(enchantment, enchantmentEventListener, plugin);
     }
-    private static void registerEnchantment(CustomEnchantment enchantment, Listener enchantmentListener, Plugin plugin) {
+    private static void registerEnchantment(CustomEnchantment enchantment, Listener enchantmentEventListener, Plugin plugin) {
         try {
             Enchantment.registerEnchantment(enchantment);
         } catch (Exception ex) {
-            Notifications.sendNotification(Notifications.NotificationType.WARNING, "The enchantment '" + enchantment.getKey() + "' has already been registered", plugin);
+            Notifications.sendNotification(Notifications.NotificationType.WARNING, "The enchantment \"" + enchantment.getKey() + "\" has already been registered", plugin);
         }
-        Bukkit.getPluginManager().registerEvents(enchantmentListener, plugin);
+        Bukkit.getPluginManager().registerEvents(enchantmentEventListener, plugin);
     }
 }

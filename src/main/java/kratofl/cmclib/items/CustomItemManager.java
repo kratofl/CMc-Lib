@@ -14,30 +14,30 @@ public class CustomItemManager {
     private static HashMap<CustomItem, Listener> customItems = new HashMap<>();
 
     /**
-     * It adds the custom item without a listener
+     * Adds the custom item without a listener
      * @param customItem
      */
-    public static void addCustomItem(CustomItem customItem) {
+    public static void registerCustomItem(CustomItem customItem) {
         customItems.put(customItem, null);
     }
     /**
-     * It adds the custom item with a listener
-     * In that case, the enchantment class is also the listener class
+     * Adds the custom item with an event listener. <br>
+     * In that case, the custom item class is also the event listener class
      * @param customItem
      * @param plugin
      */
-    public static void addCustomItem(CustomItem customItem, Plugin plugin) {
+    public static void registerCustomItem(CustomItem customItem, Plugin plugin) {
         customItems.put(customItem, (Listener) customItem);
         registerCustomItemEvent((Listener) customItem, plugin);
     }
     /**
-     * It adds the custom item with a different listener
+     * Adds the custom item with a different listener
      * @param customItem
-     * @param customItemListener
+     * @param seperateItemListener Item events, which are not defined in item class
      */
-    public static void addCustomItem(CustomItem customItem, Listener customItemListener, Plugin plugin) {
-        customItems.put(customItem, customItemListener);
-        registerCustomItemEvent(customItemListener, plugin);
+    public static void registerCustomItem(CustomItem customItem, Listener seperateItemListener, Plugin plugin) {
+        customItems.put(customItem, seperateItemListener);
+        registerCustomItemEvent(seperateItemListener, plugin);
     }
     private static void registerCustomItemEvent(Listener customItemListener, Plugin plugin) {
         Bukkit.getPluginManager().registerEvents(customItemListener, plugin);

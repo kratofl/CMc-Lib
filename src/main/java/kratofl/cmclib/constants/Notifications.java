@@ -7,7 +7,7 @@ import org.bukkit.plugin.Plugin;
 public class Notifications {
 
     /**
-     * You send to the console a notification
+     * Send a notification in the server console
      * @param type - defines the type of the message. default: INFO
      * @param message
      * @param plugin

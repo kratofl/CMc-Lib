@@ -35,23 +35,14 @@ public class CustomAdvancement {
     private Display display;
 
     /**
-     * @param key will use default minecraft namespace
+     * @param plugin provide namespace
+     * @param namespaceKey
      * @param title
      * @param description
      * @param iconMaterial
      */
-    public CustomAdvancement(String key, String title, String description, Material iconMaterial) {
-        this(NamespacedKey.MINECRAFT, key, title, description, iconMaterial);
-    }
-    /**
-     * @param namespace provide custom namespace
-     * @param key
-     * @param title
-     * @param description
-     * @param iconMaterial
-     */
-    public CustomAdvancement(String namespace, String key, String title, String description, Material iconMaterial) {
-        this.id = new NamespacedKey(namespace, key);
+    public CustomAdvancement(Plugin plugin, String namespaceKey, String title, String description, Material iconMaterial) {
+        this.id = new NamespacedKey(plugin, namespaceKey);
         this.display = new Display(title, description, iconMaterial);
     }
 
