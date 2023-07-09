@@ -17,9 +17,7 @@ public class CustomItemManager {
      * Adds the custom item without a listener
      * @param customItem
      */
-    public static void registerCustomItem(CustomItem customItem) {
-        customItems.put(customItem, null);
-    }
+    public static void registerCustomItem(CustomItem customItem) { customItems.put(customItem, null); }
     /**
      * Adds the custom item with an event listener. <br>
      * In that case, the custom item class is also the event listener class

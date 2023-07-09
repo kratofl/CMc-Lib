@@ -18,7 +18,7 @@ public class CustomShapedCraftingRecipe implements ICustomCraftingRecipe {
 
     public CustomShapedCraftingRecipe(Plugin plugin, String namespaceKey, String[] shape, ItemStack result) {
         if (shape.length != 3)
-            throw new IllegalArgumentException("Parameter 'shape' must contain exact 3 rows");
+            throw new IllegalArgumentException("Parameter 'shape' must contain exact3  rows");
 
         this.shape = shape;
         this.result = result;
