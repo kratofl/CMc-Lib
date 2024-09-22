@@ -1,5 +1,9 @@
 ## CMcLib (**C**ustom-**M**ine**c**raft **Lib**rary) v0.1
-NOT RELEASED
+
+Update - 23.09.2024
+Will continue support and developing by mid Oct 2024
+
+**NOT STABLE**
 
 This library contains, at the moment:
 - Custom items
@@ -17,5 +21,4 @@ Planned:
 Todo:
 - Version checker from github releases
 
-All features are constantly getting updated and fixed. 
 I'm trying to improve every feature, so that's easier to implement for you.
